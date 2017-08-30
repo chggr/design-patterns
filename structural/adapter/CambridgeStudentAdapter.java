@@ -18,7 +18,7 @@ public final class CambridgeStudentAdapter implements Student {
 
     @Override
     public String getMiddleName() {
-        return getMiddleName();
+        return student.getMiddleName();
     }
 
     @Override
