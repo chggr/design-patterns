@@ -1,5 +1,5 @@
-public interface ProgressBar {
+public interface ProgressBar extends Control {
 
-    void draw();
+    void onChange();
 }
 

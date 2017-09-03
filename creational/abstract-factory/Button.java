@@ -1,5 +1,5 @@
-public interface Button {
+public interface Button extends Control {
 
-    void draw();
+    void onClick();
 }
 

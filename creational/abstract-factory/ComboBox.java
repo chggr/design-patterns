@@ -1,5 +1,5 @@
-public interface ComboBox {
+public interface ComboBox extends Control {
 
-    void draw();
+    void onSelect();
 }
 
