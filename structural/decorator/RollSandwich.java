@@ -1,8 +1,8 @@
-public final class BreadSandwich implements Sandwich {
+public final class RollSandwich implements Sandwich {
 
     @Override
     public String getDescription() {
-        return "bread";
+        return "roll";
     }
 
     @Override
