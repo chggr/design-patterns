@@ -32,6 +32,13 @@
 // 1) MaxPriceObserver: Calculates maximum price for each stock.
 // 2) MinPriceObserver: Calculates minimum price for each stock.
 // 3) MovingAveragePriceObserver: Calculates the moving average for each stock.
+//
+// One of the most common performance problems when implementing the Observer
+// pattern is that a subject changes its state too often for the observers to
+// keep up. This can happen in this case when we have for example too many
+// price updates per second. In such situations it might make sense to send the
+// updates to the observers in batches or introduce a form of throttling where
+// only one in ten updates is being transmitted.
 
 public class Observer {
 
