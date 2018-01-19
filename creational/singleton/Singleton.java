@@ -31,14 +31,27 @@
 //    instance only when necessary. This can be done inside the getInstance()
 //    method before the instance is returned. Double-checked locking should
 //    be used and the instance needs to be declared as volatile to ensure
-//    thread safety. 
+//    thread safety.
 //
-// 3) Using enums (ResourceManager)
+// 3) Holder idiom (DesktopManager)
+//    Another way to implement a lazy initialized singleton is to create a
+//    static inner class "Holder" that will hold the unique instance. This
+//    approach relies on the class initialization phase within the JVM as
+//    specified by the Java Language Specification. The singleton class does not
+//    contain any fields and thus its initialization completes trivially when
+//    it is first loaded. The Holder class will only be initialized when
+//    getInstance() is executed. The class loader is guaranteed to run
+//    sequentially, so no further synchronization is required in getInstance().
+//    This is an efficient and thread safe implementation, but can only be used
+//    when singleton construction is guaranteed not to fail. If it fails, any
+//    subsequent calls to getInstance() will result in NoClassDefFoundError.
+//
+// 4) Using enums (ResourceManager)
 //    An elegant way to create a singleton in Java is by converting the class
 //    to enum. This method ensures that only one instance is available in the
 //    application and it is totally thread safe.
 //
-// 4) Singleton interface implementations (Loggers)
+// 5) Singleton interface implementations (Loggers)
 //    Sometimes we need to ensure all implementations of a particular interface
 //    are singletons. An easy and safe way to do this is by using enums, as
 //    shown in the Loggers example. There are three Loggers defined and only
